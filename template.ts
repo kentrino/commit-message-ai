@@ -3,11 +3,12 @@ export const defaultPromptTemplate = [
   "{{diff}}",
   "",
   "commit messages should:",
-  " - follow conventional commits",
-  " - message format should be: <type>[scope]: <description>",
-
+  // " - follow conventional commits",
+  // " - message format should be: <type>[scope]: <description>",
+  " - follow gitmoji commit convention",
+  " - format should be :emoji: (<scope>): <description>",
   "",
   "examples:",
-  " - fix(authentication): add password regex pattern",
-  " - feat(storage): add new test cases",
+  " - :recycle: Migrate from yarn to pnpm (#1503)",
+  " - :wrench: Run turborepo build in dependencies (#1419)",
 ].join("\n");
