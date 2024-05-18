@@ -1,26 +1,25 @@
 // Adapted from: https://github.com/wong2/chat-gpt-google-extension/blob/main/background/index.mjs
 
-import { Configuration, OpenAIApi } from "openai";
-import { getApiKey, getPromptOptions } from "./config.js";
-import { getConfig } from "./config_storage.js";
+import Anthropic from '@anthropic-ai/sdk';
 
-const configuration = new Configuration({
+import { getApiKey, getPromptOptions } from "./config.js";
+
+const client = new Anthropic({
   apiKey: await getApiKey(),
 });
-const openai = new OpenAIApi(configuration);
 
 export class ChatGPTClient {
   async getAnswer(question: string): Promise<string> {
     const { model, maxTokens, temperature } = await getPromptOptions();
 
     try {
-      const result = await openai.createCompletion({
+      const result = await client.messages.create({
         model,
-        prompt: question,
+        messages: [{ role: 'user', content: question }],
         max_tokens: maxTokens,
         temperature,
       });
-      return result.data.choices[0].text;
+      return result.content[0].text
     } catch (e) {
       console.error(e?.response ?? e);
       throw e;
