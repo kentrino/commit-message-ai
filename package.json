@@ -24,7 +24,6 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.21.0",
     "enquirer": "^2.3.6",
-    "openai": "^4.8.0",
     "ora": "^6.1.2",
     "uuid": "^9.0.0",
     "ws": "^8.12.1",
