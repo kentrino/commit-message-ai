@@ -18,7 +18,7 @@ interface Config {
 
 const defaultConfig = {
   model: "claude-3-opus-20240229",
-  temperature: 0.5,
+  temperature: 0.2,
   maxTokens: 4096,
 } satisfies Config;
 
