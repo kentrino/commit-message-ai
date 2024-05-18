@@ -17,9 +17,9 @@ interface Config {
 }
 
 const defaultConfig = {
-  model: "text-davinci-003",
+  model: "claude-3-opus-20240229",
   temperature: 0.5,
-  maxTokens: 2048,
+  maxTokens: 4096,
 } satisfies Config;
 
 const writeJsonFile = (path: string, data: unknown) => {
