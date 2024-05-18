@@ -1,5 +1,5 @@
 export const defaultPromptTemplate = [
-  "suggest 10 commit messages based on the following diff:",
+  "suggest 10 commit messages based on the following diff. You MUST only show results.:",
   "{{diff}}",
   "",
   "commit messages should:",
