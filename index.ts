@@ -76,7 +76,7 @@ async function run(diff: string) {
 }
 
 async function getMessages(api: ChatGPTClient, request: string) {
-  spinner.start("Asking ChatGPT 🤖 for commit messages...");
+  spinner.start("Asking Claude AI 🤖 for commit messages...");
 
   // send a message and wait for the response
   try {
